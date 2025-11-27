@@ -1,0 +1,90 @@
+    /* Custom styles for the carousel */
+        .carousel-item {
+            height: 65vh;
+            min-height: 300px;
+            background: no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .carousel-item img {
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Placeholder background colors for each slide */
+        .slide-agric { background-color: #7CB342; }
+        .slide-automotive { background-color: #546E7A; }
+        .slide-electrical { background-color: #FFB300; }
+        .slide-civil { background-color: #42A5F5; }
+        .slide-mechanical { background-color: #78909C; }
+        .slide-mechatronic { background-color: #8E24AA; }
+        .slide-water { background-color: #0288D1; }
+
+        .carousel-caption {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            right: 10%;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            text-align: center;
+        }
+        .carousel-caption h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .carousel-caption p {
+            font-size: 1.5rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        .carousel-caption .phrase {
+            font-style: italic;
+            font-size: 1.8rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        .carousel-caption .btn {
+            margin-top: 1rem;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .carousel-caption {
+                left: 5%;
+                right: 5%;
+                top: 15%;
+            }
+            .carousel-caption h2 {
+                font-size: 2rem;
+            }
+            .carousel-caption p {
+                font-size: 1.2rem;
+            }
+            .carousel-caption .phrase {
+                font-size: 1.4rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .carousel-caption {
+                left: 2%;
+                right: 2%;
+                top: 10%;
+                padding: 0.5rem;
+            }
+            .carousel-caption h2 {
+                font-size: 1.5rem;
+            }
+            .carousel-caption p {
+                font-size: 1rem;
+            }
+            .carousel-caption .phrase {
+                font-size: 1.2rem;
+            }
+        }
+        .carousel-caption {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }

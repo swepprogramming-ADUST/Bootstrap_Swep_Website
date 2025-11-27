@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swep Programming</title>
+  <style>
+    /* Custom styles for cards */
+    .card-header {
+      padding: 0;
+      overflow: hidden;
+    }
+    
+    .card-header img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      margin: 0;
+    }
+    
+    .card {
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .card-title {
+      font-weight: bold;
+      color: #333;
+    }
+    
+    /* Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Footer styles */
+    footer {
+      background-color: #212529 !important;
+      color: #fff !important;
+    }
+    
+    footer .text-body-secondary {
+      color: #adb5bd !important;
+    }
+    
+    footer .nav-link {
+      color: #adb5bd !important;
+    }
+    
+    footer .nav-link:hover {
+      color: #fff !important;
+    }
+    
+    /* Contributors section */
+    .contributors {
+      background-color: #f8f9fa;
+      padding: 40px 0;
+      margin-top: 40px;
+    }
+    
+    .contributor-card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+    }
+    
+    .contributor-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .contributor-role {
+      font-weight: bold;
+      color: #0d6efd;
+    }
+    
+    .contributor-dept {
+      font-style: italic;
+      color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#">Adustech Engineering</a> <!-- Updated Brand Name -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#departments">Departments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contributors">Contributors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+   <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <!-- Slide 1: Agricultural Engineering -->
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="images/Agricultural engineering.jpg" class="d-block w-100" alt="Agricultural Engineering">
+      <div class="carousel-caption">
+        <h2 class="text-light">Agricultural Engineering</h2>
+         <p class="text-light">Drive future of farming by integrating technology with biology. This field focuses on designing sustainable solutions for food production, machinery, irrigation, and processing, ensuring global food security and environmental stewardship.</p>
+        <p class="phrase fst-italic">"Cultivating Tomorrow's Harvest."</p>
+        <a href="#agric-card" class="btn btn-success">Explore Department</a>
+      </div>
+    </div>
+    <!-- Slide 2: Automotive Engineering -->
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="images/Automotive.jpeg" class="d-block w-100" alt="Automotive Engineering">
+      <div class="carousel-caption  ">
+         <h2 class="text-light">Automotive Engineering</h2>
+         <p class="text-light">Step into the world of vehicle design, manufacturing, and innovation. From power systems and aerodynamics to the rise of electric vehicles and autonomous driving, this department is at the forefront of modern mobility.</p>
+        <p class="phrase fst-italic">"Engineering the Future of Motion."</p>
+        <a href="#automotive-card" class="btn btn-secondary">Explore Department</a>
+      </div>
+    </div>
+    <!-- Slide 3: Electrical Engineering -->
+    <div class="carousel-item">
+      <img src="images/ele.jpeg" class="d-block w-100" alt="Electrical Engineering">
+      <div class="carousel-caption  ">
+         <h2 class="text-light">Electrical Engineering</h2>
+         <p class="text-light">Power the modern world. This discipline covers everything from massive power grids and renewable energy systems to microelectronics, control systems, and the intricate circuits that form the backbone of all modern technology.</p>
+        <p class="phrase fst-italic">"Powering the Connected World."</p>
+        <a href="#electrical-card" class="btn btn-warning">Explore Department</a>
+      </div>
+    </div>
+    <!-- Slide 4: Civil Engineering -->
+    <div class="carousel-item">
+      <img src="images/civil-engineering-engineers-on-site.jpg.webp" class="d-block w-100" alt="Civil Engineering">
+      <div class="carousel-caption  ">
+         <h2 class="text-light">Civil Engineering</h2>
+         <p class="text-light">Shape the very fabric of society. Civil engineers design, build, and maintain the infrastructure we rely on daily, including bridges, roads, dams, buildings, and water supply systems, creating safe and sustainable communities.</p>
+        <p class="phrase fst-italic">"Designing the Foundations of Society."</p>
+        <a href="#civil-card" class="btn btn-primary">Explore Department</a>
+      </div>
+    </div>
+    <!-- Slide 5: Mechanical Engineering -->
+    <div class="carousel-item">
+      <img src="images/mechanical.jpg" class="d-block w-100" alt="Mechanical Engineering">
+      <div class="carousel-caption  ">
+         <h2 class="text-light">Mechanical Engineering</h2>
+         <p class="text-light">Master the principles of motion, energy, and force. As the broadest of all engineering disciplines, it involves the design, analysis, and manufacturing of machines and systems, from HVAC and robotics to engines and turbines.</p>
+        <p class="phrase fst-italic">"The Art and Science of Innovation."</p>
+        <a href="#mechanical-card" class="btn btn-info">Explore Department</a>
+      </div>
+    </div>
+    <!-- Slide 6: Mechatronic Engineering -->
+    <div class="carousel-item">
+      <img src="images/mect.webp" class="d-block w-100" alt="Mechatronic Engineering">
+      <div class="carousel-caption  ">
+         <h2 class="text-light">Mechatronic Engineering</h2>
+         <p class="text-light">Bridge the gap between mechanical, electronic, and software engineering. This field creates intelligent systems and smart machines, such as robots and automated manufacturing lines, that sense, respond, and adapt to their environment.</p>
+        <p class="phrase fst-italic">"Where Mechanics Meets Intelligence."</p>
+        <a href="#mechatronic-card" class="btn btn-dark">Explore Department</a>
+      </div>
+    </div>
+    <!-- Slide 7: Water Resources Engineering -->
+    <div class="carousel-item">
+      <img src="images/water.jpg" class="d-block w-100" alt="Water Resources Engineering">
+      <div class="carousel-caption  ">
+         <h2 class="text-light">Water Resources Engineering</h2>
+         <p class="text-light">Manage our planet's most vital resource. This specialty focuses on the design and management of systems for water supply, treatment, irrigation, flood control, and hydroelectric power, ensuring access to clean water for all.</p>
+        <p class="phrase fst-italic">"Sustaining Life, Drop by Drop."</p>
+        <a href="#water-card" class="btn btn-info">Explore Department</a>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+  <div class="container-fluid mt-4"> <!-- Added margin top to avoid overlap with fixed navbar -->
+     <h1 class="text-center mt-3">ADUSTECH ENGINEERING</h1>
+     <p class="p-2">
+        General engineering is the broad and foundational 
+        discipline concerned with the practical
+        application of scientific and mathematical 
+        principles to design, build, and maintain 
+        structures, systems, and processes that solve
+        real-world problems. At its core, engineering 
+        is about innovation and problem-solving; it is
+        the art and science of turning abstract ideas 
+        into tangible, functional realities that
+        improve human life. This field is not 
+        monolithic but a vast ecosystem of 
+        specialized branches, each focusing on 
+        a different aspect of the built and natural 
+        environment. <br>
+        The primary pillars of engineering include 
+        civil, mechanical, electrical, and chemical
+        engineering. Civil engineering forms the 
+        backbone of our infrastructure, encompassing 
+        the design of bridges, roads, dams, and 
+        buildings. Mechanical engineering deals
+        with the design of machines and moving 
+        parts, from engines and turbines to robotics
+        and HVAC systems. Electrical engineering 
+        powers our modern world, focusing on 
+        electricity generation, electronics, 
+        control systems, and telecommunications. 
+        Chemical engineering applies physical 
+        and life sciences to convert raw materials 
+        into valuable products, such as 
+        pharmaceuticals, fuels, and advanced 
+        materials.
+        <br>
+        Beyond these classic fields, engineering has
+        expanded into interdisciplinary domains like
+        aerospace, biomedical, computer, and 
+        environmental engineering. Despite their 
+        specializations, all engineers share a 
+        common mindset: a methodical approach to 
+        the design process that considers constraints
+        like cost, safety, ethics, and environmental
+        sustainability. Ultimately, general 
+        engineering is the invisible force that 
+        shapes modern civilization. From the clean 
+        water flowing from our taps to the global 
+        connectivity of the internet, the impact of
+        engineers is pervasive and indispensable, 
+        driving progress and forging the future.
+     </p>
+  </div>
+  <!-- cards with rows -->
+
+  <div class="row container-fluid" id="departments">
+    <!-- Agric -->
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+    <div class="card" id="agric-card">
+    <div class="card-header">
+      <img src="images/Agricultural-Engineering.jpg" alt="Agricultural Engineering">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Agricultural Engineering</h5>
+      <p class="card-text">Our Agricultural Engineering department combines engineering principles with agricultural sciences to create sustainable farming solutions. Students learn about farm machinery, irrigation systems, food processing, and renewable energy applications in agriculture.</p>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="btn btn-success">Explore More</a>
+    </div>
+   </div>
+      </div>
+      <!-- Auto -->
+           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+    <div class="card" id="automotive-card">
+    <div class="card-header">
+      <img src="images/Automotive.jpg" alt="Automotive Engineering">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Automotive Engineering</h5>
+      <p class="card-text">The Automotive Engineering department focuses on vehicle design, development, and manufacturing. Our curriculum covers powertrain systems, vehicle dynamics, materials science, and emerging technologies like electric and autonomous vehicles.</p>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="btn btn-secondary">Explore More</a>
+    </div>
+   </div>
+      </div>
+      <!-- civil -->
+           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+    <div class="card" id="civil-card">
+    <div class="card-header">
+      <img src="images/civil-engineering-engineers-on-site.jpg.webp" alt="Civil Engineering">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Civil Engineering</h5>
+      <p class="card-text">Civil Engineering at ADUSTECH prepares students to design, construct, and maintain infrastructure projects. Our program covers structural engineering, transportation systems, geotechnical engineering, and environmental sustainability.</p>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="btn btn-primary">Explore More</a>
+    </div>
+   </div>
+      </div>
+      <!-- electrical -->
+         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+    <div class="card" id="electrical-card">
+    <div class="card-header">
+      <img src="images/ele2.jpg" alt="Electrical Engineering">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Electrical Engineering</h5>
+      <p class="card-text">Our Electrical Engineering department explores power systems, electronics, telecommunications, and control systems. Students gain expertise in renewable energy, circuit design, and the latest technologies powering our modern world.</p>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="btn btn-warning">Explore More</a>
+    </div>
+   </div>
+      </div>
+      <!-- mech -->
+           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+    <div class="card" id="mechanical-card">
+    <div class="card-header">
+      <img src="images/mech2.jpeg" alt="Mechanical Engineering">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Mechanical Engineering</h5>
+      <p class="card-text">The Mechanical Engineering department covers the design, analysis, and manufacturing of mechanical systems. Our curriculum includes thermodynamics, fluid mechanics, materials science, and robotics, preparing students for diverse engineering challenges.</p>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="btn btn-info">Explore More</a>
+    </div>
+   </div>
+      </div>
+      <!-- mect -->
+           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+    <div class="card" id="mechatronic-card">
+    <div class="card-header">
+      <img src="images/mechatronics.jpg" alt="Mechatronic Engineering">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Mechatronic Engineering</h5>
+      <p class="card-text">Mechatronic Engineering integrates mechanical, electronic, and software engineering. Our students learn to design intelligent systems, robotics, and automated machines that are transforming industries worldwide.</p>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="btn btn-dark">Explore More</a>
+    </div>
+   </div>
+      </div>
+      <!-- water -->
+           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+    <div class="card" id="water-card">
+    <div class="card-header">
+      <img src="images/water.jpg" alt="Water Resources Engineering">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Water Resources Engineering</h5>
+      <p class="card-text">Our Water Resources Engineering department focuses on sustainable water management. Students learn about water supply systems, wastewater treatment, flood control, and irrigation technologies essential for communities worldwide.</p>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="btn btn-info">Explore More</a>
+    </div>
+   </div>
+      </div>
+    </div>
+    
+    <!-- Contributors Section -->
+    <section id="contributors" class="contributors">
+      <div class="container">
+        <h2 class="text-center mb-4">Website Contributors</h2>
+        <p class="text-center mb-5">We acknowledge the following individuals who contributed to the development of this website:</p>
+        
+        <div class="row">
+          <!-- Tutor -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="contributor-card">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-person-badge-fill text-primary me-3" style="font-size: 2rem;"></i>
+                <div>
+                  <h5 class="mb-0">Tukur S. Gama</h5>
+                  <span class="contributor-role">Project Tutor</span>
+                </div>
+              </div>
+              <p class="contributor-dept">Mechatronics Engineering Department</p>
+            </div>
+          </div>
+          
+          <!-- Students -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="contributor-card">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-mortarboard-fill text-success me-3" style="font-size: 2rem;"></i>
+                <div>
+                  <h5 class="mb-0">Abdulgeey</h5>
+                  <span class="contributor-role">Student Contributor</span>
+                </div>
+              </div>
+              <p class="contributor-dept">Electrical Engineering Department</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="contributor-card">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-mortarboard-fill text-success me-3" style="font-size: 2rem;"></i>
+                <div>
+                  <h5 class="mb-0">Abdussamad Zangina</h5>
+                  <span class="contributor-role">Student Contributor</span>
+                </div>
+              </div>
+              <p class="contributor-dept">Mechatronics Engineering Department</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="contributor-card">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-mortarboard-fill text-success me-3" style="font-size: 2rem;"></i>
+                <div>
+                  <h5 class="mb-0">A.H. Gamagira</h5>
+                  <span class="contributor-role">Student Contributor</span>
+                </div>
+              </div>
+              <p class="contributor-dept">Agricultural Engineering Department</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="contributor-card">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-mortarboard-fill text-success me-3" style="font-size: 2rem;"></i>
+                <div>
+                  <h5 class="mb-0">Alhafizh Ikara</h5>
+                  <span class="contributor-role">Student Contributor</span>
+                </div>
+              </div>
+              <p class="contributor-dept">Agricultural Engineering Department</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="contributor-card">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-mortarboard-fill text-success me-3" style="font-size: 2rem;"></i>
+                <div>
+                  <h5 class="mb-0">Umar Muhammad Makole</h5>
+                  <span class="contributor-role">Student Contributor</span>
+                </div>
+              </div>
+              <p class="contributor-dept">Mechanical Engineering Department</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--footer  -->  
+      <footer class="d-flex flex-wrap fi justify-content-between align-items-center py-3 my-4 border-top container-fluid">
+        <div class="col-md-4 d-flex align-items-center">
+          <a
+            href="/"  class="mb-3 me-2 mb-md-0 text-decoration-none lh-1"
+            aria-label="Bootstrap">
+            <i class="bi bi-code-slash text-light me-2" style="font-size: 1.5rem;"></i>
+          </a>
+          <span class="mb-3 mb-md-0 text-light"
+            >&copy; 2025 ADUSTECH Engineering</span
+          >
+        </div>
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3">
+            <a class="text-light" href="#" aria-label="Instagram">
+              <i class="bi bi-instagram" style="font-size: 1.5rem;"></i>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-light" href="#" aria-label="Facebook">
+              <i class="bi bi-facebook" style="font-size: 1.5rem;"></i>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-light" href="#" aria-label="Twitter">
+              <i class="bi bi-twitter" style="font-size: 1.5rem;"></i>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-light" href="#" aria-label="LinkedIn">
+              <i class="bi bi-linkedin" style="font-size: 1.5rem;"></i>
+            </a>
+          </li>
+        </ul>
+      </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>
